@@ -5,8 +5,6 @@
         <?php wp_head(); ?>
     </head>
     <body>
-        <h1>This is h1</h1>
-
         <header class="site-header">
       <div class="container">
         <h1 class="school-logo-text float-left">
