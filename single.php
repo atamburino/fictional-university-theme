@@ -1,3 +1,5 @@
+<p>TEST</p>
+
 <?php
 
 get_header();
