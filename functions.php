@@ -19,3 +19,8 @@ function uni_features(){
 }
 
 add_action('after_setup_theme', 'uni_features');
+
+
+// added and created a new folder for the events post type this is in a new local folder
+// This folder is not on Github
+
