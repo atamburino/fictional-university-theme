@@ -49,6 +49,10 @@ get_header();
         )
       ));
 
+      if ($homePageEvents->have_posts()) { 
+      echo '<hr class="section-break">';
+      echo '<h2 class="headline headline--medium">Upcoming ' . get_the_title() . ' Events<h2>';
+
       while ($homePageEvents->have_posts()) {
         $homePageEvents->the_post(); ?>
         <div class="event-summary">
@@ -72,7 +76,9 @@ get_header();
                   echo wp_trim_words(get_the_content(), 18);; ?><a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
           </div>
         </div>
-      <?php }; ?>
+      <?php }
+      }
+      ?>
 
         </div>
 
