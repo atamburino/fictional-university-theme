@@ -1,0 +1,57 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE Specific Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled Source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and Databases
+*.log
+*.sql
+*.sqlite
+
+# Build Directories
+build/
+dist/
+out/
+
+# Dependency Directories
+node_modules/
+vendor/
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+
+# Other
+*.pdf
+*.doc
+*.docx
