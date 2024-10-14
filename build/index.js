@@ -111,23 +111,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 
 class Search {
-  // area 1. describe & create/init the object 
+  // 1. describe and create/initiate our object
   constructor() {
     this.openButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".js-search-trigger");
     this.closeButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".search-overlay__close");
     this.searchOverlay = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".search-overlay");
+    this.searchField = jquery__WEBPACK_IMPORTED_MODULE_0___default()("#search-term");
     this.events();
     this.isOverlayOpen = false;
+    this.typingTimer;
   }
 
-  // area 2. events - on click and such
+  // 2. events
   events() {
     this.openButton.on("click", this.openOverlay.bind(this));
     this.closeButton.on("click", this.closeOverlay.bind(this));
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on("keydown", this.keyPressDispatcher.bind(this));
+    this.searchField.on("keydown", this.typingLogic.bind(this));
   }
 
-  // area 3. methods (function, action....)
+  // 3. methods (function, action...)
+  typingLogic() {
+    clearTimeout(this.typingTimer);
+    this.typingTimer = setTimeout(function () {
+      console.log("This is a timeout test.");
+    }, 2000);
+  }
   keyPressDispatcher(e) {
     if (e.keyCode == 83 && !this.isOverlayOpen) {
       this.openOverlay();
@@ -137,13 +146,15 @@ class Search {
     }
   }
   openOverlay() {
-    this.searchOverlay.addClass("search-overlay--active"); // fixed typo
+    this.searchOverlay.addClass("search-overlay--active");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").addClass("body-no-scroll");
+    console.log("our open method just ran!");
     this.isOverlayOpen = true;
   }
   closeOverlay() {
-    this.searchOverlay.removeClass("search-overlay--active"); // fixed typo
+    this.searchOverlay.removeClass("search-overlay--active");
     jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").removeClass("body-no-scroll");
+    console.log("our close method just ran!");
     this.isOverlayOpen = false;
   }
 }
